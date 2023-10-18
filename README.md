@@ -1,31 +1,28 @@
 <div align="center">
 
-NOTE: DocQuery is not actively maintained anymore. We still welcome contributions and discussions among the community!
+NOTE: DocQuery is not actively maintained anymore. This is an  attempt to update the models used in the original repository, so it uses the current(Oct 2023) State of the Art models for VQA
 
 # DocQuery: Document Query Engine Powered by Large Language Models
-
-[![Demo](https://img.shields.io/badge/Demo-Gradio-brightgreen)](https://huggingface.co/spaces/impira/docquery)
-[![Demo](https://img.shields.io/badge/Demo-Colab-orange)](https://github.com/impira/docquery/blob/main/docquery_example.ipynb)
-[![PyPI](https://img.shields.io/pypi/v/docquery?color=green&label=pip%20install%20docquery)](https://pypi.org/project/docquery/)
-[![Discord](https://img.shields.io/discord/1015684761471160402?label=Chat)](https://discord.gg/HucNfTtx7V)
-[![Downloads](https://static.pepy.tech/personalized-badge/docquery?period=total&units=international_system&left_color=grey&right_color=green&left_text=Downloads)](https://pepy.tech/project/docquery)
 
 </div>
 
 DocQuery is a library and command-line tool that makes it easy to analyze semi-structured and unstructured documents (PDFs, scanned
 images, etc.) using large language models (LLMs). You simply point DocQuery at one or more documents and specify a
-question you want to ask. DocQuery is created by the team at [Impira](https://impira.com?utm_source=github&utm_medium=referral&utm_campaign=docquery).
+question you want to ask. DocQuery is created by the team at [Impira](https://impira.com?utm_source=github&utm_medium=referral&utm_campaign=docquery). This version is implemented by pinkthepink
 
 ## Quickstart (CLI)
 
-To install `docquery`, you can simply run `pip install docquery`. This will install the command line tool as well as the library.
+To install `docquery 0.7.1`, you can simply run the following code:
+
+'''sh
+git clone https://github.com/pinkthepink/docquery-updated.git
+apt-get install poppler-utils
+cd docquery && pip install .[all]
+'''
+
+This will install the command line tool as well as the library.
 If you want to run OCR on images, then you must also install the [tesseract](https://github.com/tesseract-ocr/tesseract) library:
 
-- Mac OS X (using [Homebrew](https://brew.sh/)):
-
-  ```sh
-  brew install tesseract
-  ```
 
 - Ubuntu:
 
@@ -127,41 +124,17 @@ driver on your system automatically, but you'll need to make sure Chrome is inst
 docquery scan "What is the #1 post's title?" https://news.ycombinator.com
 ```
 
-## Where to go from here
-
-DocQuery is a swiss army knife tool for working with documents and experiencing the power of modern machine learning. You can use it
-just about anywhere, including behind a firewall on sensitive data, and test it with a wide variety of documents. Our hope is that
-DocQuery enables many creative use cases for document understanding by making it simple and easy to ask questions from your documents.
-
-When you run DocQuery for the first time, it will download some files (e.g. the models and some library code from HuggingFace). However,
-nothing leaves your computer -- the OCR is done locally, models run locally, etc. This comes with the benefit of security and privacy;
-however, it comes at the cost of runtime performance and some accuracy.
-
-If you find yourself wondering how to achieve higher accuracy, work with more file types, teach the model with your own data, have
-a human-in-the-loop workflow, or query the data you're extracting, then do not fear -- you are running into the challenges that
-every organization does while putting document AI into production. The [Impira](https://www.impira.com/) platform is designed to
-solve these problems in an easy and intuitive way. Impira comes with a QA model that is additionally trained on proprietary datasets
-and can achieve 95%+ accuracy out-of-the-box for most use cases. It also has an intuitive UI that enables subject matter experts to label
-and improve the models, as well as an API that makes integration a breeze. Please [sign up for the product](https://www.impira.com/signup) or
-[reach out to us](info@impira.com) for more details.
-
-## Status
-
-DocQuery is a new project. Although the underlying models are running in production, we've just recently released our code in open source
-and are actively working with the OSS community to upstream some of the changes we've made (e.g. [the model](https://github.com/huggingface/transformers/pull/18407)
-and [pipeline](https://github.com/huggingface/transformers/pull/18414)). DocQuery is rapidly changing, and we are likely to make breaking
-API changes. If you would like to run it in production, then we suggest pinning a version or commit hash. Either way, please get in touch
-with us at [oss@impira.com](mailto:oss@impira.com) with any questions or feedback.
 
 ## Acknowledgements
 
-DocQuery would not be possible without the contributions of many open source projects:
+DocQuery Updated would not be possible without the contributions of many open source projects:
 
 - [pdfplumber](https://github.com/jsvine/pdfplumber) / [pdfminer.six](https://github.com/pdfminer/pdfminer.six)
 - [Pillow](https://pillow.readthedocs.io/en/stable/)
 - [pytorch](https://pytorch.org/)
 - [tesseract](https://github.com/tesseract-ocr/tesseract) / [pytesseract](https://pypi.org/project/pytesseract/)
 - [transformers](https://github.com/impira/transformers)
+- [DocQuery](https://github.com/impira/docquery)
 
 and many others!
 
