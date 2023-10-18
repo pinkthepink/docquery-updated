@@ -14,11 +14,11 @@ question you want to ask. DocQuery is created by the team at [Impira](https://im
 
 To install `docquery 0.7.1`, you can simply run the following code:
 
-'''sh
+```sh
 git clone https://github.com/pinkthepink/docquery-updated.git
 apt-get install poppler-utils
 cd docquery && pip install .[all]
-'''
+```
 
 This will install the command line tool as well as the library.
 If you want to run OCR on images, then you must also install the [tesseract](https://github.com/tesseract-ocr/tesseract) library:
